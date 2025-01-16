@@ -1,0 +1,110 @@
+/* 設定整體背景及基本樣式 */
+body {
+    font-family: Arial, sans-serif; /* 設定主要字體為 Arial，次選 sans-serif */
+    background-color: #f2f2f2; /* 預設背景顏色 */
+    text-align: center; /* 將文字置中對齊 */
+    background-image: url('b003.png'); /* 設定背景圖片 */
+    background-size: cover; /* 讓背景圖片覆蓋整個畫面 */
+    background-position: center; /* 將背景圖片置中 */
+    background-repeat: no-repeat; /* 防止背景圖片重複 */
+    margin: 0; /* 移除默認外邊距 */
+    padding: 0; /* 移除默認內邊距 */
+    height: 100%; /* 設定頁面高度 */
+    overflow: hidden; /* 禁止頁面滾動 */
+}
+
+/* 容器樣式 */
+.container {
+    display: flex; /* 使用彈性盒子模型 */
+    flex-direction: column; /* 垂直排列子元素 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    height: 100vh; /* 使用視口高度 */
+    box-sizing: border-box; /* 包括內邊距和邊框在內的尺寸計算 */
+    padding: 10px; /* 避免內容貼近邊緣 */
+}
+
+/* 暱稱輸入區塊樣式 */
+#nicknameSection {
+    margin-bottom: 20px; /* 與下方區塊的距離 */
+}
+
+/* 文本輸入框樣式 */
+input[type="text"] {
+    padding: 10px; /* 內部間距 */
+    font-size: 16px; /* 文字大小 */
+    margin: 10px 0; /* 上下外距 */
+}
+
+/* 按鈕樣式 */
+button {
+    padding: 10px 20px; /* 內部間距 */
+    font-size: 16px; /* 文字大小 */
+    background-color: #ff6347; /* 按鈕背景色（紅色調） */
+    color: white; /* 按鈕文字顏色為白色 */
+    border: none; /* 移除按鈕邊框 */
+    cursor: pointer; /* 鼠標移過時顯示手指圖標 */
+    margin: 5px; /* 按鈕間距 */
+}
+
+/* 按鈕滑鼠懸停效果 */
+button:hover {
+    background-color: #ff4500; /* 滑鼠懸停時按鈕的背景顏色 */
+}
+
+/* 遊戲區域樣式 */
+#gameArea {
+    display: flex;
+    flex-direction: column; /* 垂直排列內容 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    height: calc(100vh - 200px); /* 動態調整遊戲區域高度 */
+    box-sizing: border-box;
+    overflow: hidden; /* 防止溢出滾動 */
+}
+
+/* 每一行的紅包排列樣式 */
+.row {
+    display: flex; /* 使用彈性盒模型排列紅包 */
+    justify-content: center; /* 將紅包在行內置中 */
+    flex-wrap: wrap; /* 小螢幕時自動換行 */
+    margin: 5px; /* 每行與其他行的距離 */
+}
+
+/* 紅包的樣式 */
+.envelope {
+    width: 80px; /* 設定紅包寬度 */
+    height: 120px; /* 設定紅包高度 */
+    background-color: #ffcc00; /* 紅包顏色（黃色） */
+    margin: 5px; /* 紅包之間的間距 */
+    border-radius: 10px; /* 紅包邊角圓滑 */
+    cursor: pointer; /* 鼠標移過時顯示手指圖標 */
+    position: relative; /* 為內部圖片設置相對定位 */
+}
+
+/* 已開啟紅包的樣式 */
+.envelope.opened {
+    background-color: #fff; /* 開啟後紅包變成白色 */
+}
+
+/* 紅包內的圖片樣式 */
+.envelope img {
+    width: 80%; /* 圖片寬度為紅包的 70% */
+    height: auto; /* 保持圖片原比例 */
+    position: absolute; /* 絕對定位 */
+    top: 50%; /* 垂直置中 */
+    left: 50%; /* 水平置中 */
+    transform: translate(-50%, -50%); /* 通過位移將圖片完全置中 */
+}
+
+/* 啟動遊戲後的祝福語樣式 */
+#greeting {
+    font-size: 20px; /* 字體大小 */
+    font-weight: bold; /* 文字加粗 */
+    color: #ff6347; /* 文字顏色（紅色調） */
+}
+
+/* 再抽一次與換個暱稱按鈕樣式 */
+#resetButton, #changeNicknameButton {
+    margin-top: 20px; /* 與其他區域的距離 */
+}
