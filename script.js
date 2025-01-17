@@ -9,17 +9,17 @@ const envelopes = [
 
 // 預設的隨機紅包內容
 const rewards = [
-    'a02/reward1.png', 'a02/reward2.png', 'a02/reward3.png',
-    'a02/reward4.png', 'a02/reward5.png', 'a02/reward6.png',
-    'a02/reward7.png', 'a02/reward8.png', 'a02/reward9.png',
-    'a02/reward10.png', 'a02/reward11.png'
+    'reward1.png', 'reward2.png', 'reward3.png',
+    'reward4.png', 'reward5.png', 'reward6.png',
+    'reward7.png', 'reward8.png', 'reward9.png',
+    'reward10.png', 'reward11.png'
 ];
 
 // 特定暱稱的紅包內容（喵喵固定的圖片）
 const specialRewards = [
-    'a04/special1.png', 'a04/special2.png', 'a04/special3.png',
-    'a04/special4.png', 'a04/special5.png', 'a04/special6.png',
-    'a04/special7.png', 'a04/special8.png', 'a04/special9.png'
+    'a02/special1.png', 'a02/special2.png', 'a02/special3.png',
+    'a02/special4.png', 'a02/special5.png', 'a02/special6.png',
+    'a02/special7.png', 'a02/special8.png', 'a02/special9.png'
 ];
 
 // 特定暱稱的紅包內容（打老虎固定的圖片）
@@ -102,7 +102,12 @@ startButton.addEventListener('click', () => {
     const nickname = document.getElementById('nickname').value.trim();
 
     if (nickname) {
-        // 儲存初始暱稱
+ 
+        // 隱藏插圖
+        const nicknameImageWrapper = document.getElementById('nicknameImageWrapper');
+        nicknameImageWrapper.style.display = 'none'; // 隱藏插圖容器
+
+       // 儲存初始暱稱
         initialNickname = nickname;
 
         // 隱藏暱稱輸入欄位，顯示祝福語句
@@ -158,6 +163,10 @@ resetButton.addEventListener('click', () => {
 
 // 點擊換暱稱按鈕返回暱稱輸入頁面
 changeNicknameButton.addEventListener('click', () => {
+
+    // 顯示插圖
+    nicknameImageWrapper.style.display = 'flex'; // 恢復插圖
+
     // 清空紅包內容和狀態
     envelopes.forEach((id) => {
         const envelope = document.getElementById(id);
