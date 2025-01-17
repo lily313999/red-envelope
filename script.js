@@ -49,6 +49,28 @@ const envelopeBackgrounds = [
     'a01/bg5.png'
 ];
 
+
+// 獲取音樂播放器元素
+const backgroundMusic = document.getElementById('backgroundMusic');
+
+// 設定音量為 50%
+backgroundMusic.volume = 0.5;
+
+// 在頁面載入時自動播放音樂
+window.addEventListener('load', () => {
+    backgroundMusic.play().catch((error) => {
+        console.warn('自動播放受限：', error);
+        // 如果瀏覽器阻止自動播放，可以顯示播放按鈕讓用戶啟動音樂
+    });
+});
+
+// 在遊戲區域顯示時繼續播放音樂（確保不會中斷）
+startButton.addEventListener('click', () => {
+    backgroundMusic.play().catch((error) => {
+        console.warn('播放受限：', error);
+    });
+});
+
 // 設定紅包內容的變數
 let currentRewards = [];
 

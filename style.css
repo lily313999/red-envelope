@@ -135,3 +135,7 @@ button:hover {
 #resetButton, #changeNicknameButton {
     margin-top: 20px; /* 與其他區域的距離 */
 }
+
+#backgroundMusic {
+    display: none; /* 隱藏音樂播放器 */
+}
