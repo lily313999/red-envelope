@@ -24,6 +24,21 @@ body {
     padding: 10px; /* 避免內容貼近邊緣 */
 }
 
+/* 插圖外部容器樣式 */
+#nicknameImageWrapper {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    margin-bottom: 10px; /* 與輸入區域的距離 */
+}
+
+/* 插圖樣式 */
+#nicknameImage {
+    width: 100%; /* 自適應容器寬度 */
+    max-width: 300px; /* 設定最大寬度，避免圖片過大 */
+    height: auto; /* 保持圖片比例 */
+}
+
 /* 暱稱輸入區塊樣式 */
 #nicknameSection {
     margin-bottom: 20px; /* 與下方區塊的距離 */
