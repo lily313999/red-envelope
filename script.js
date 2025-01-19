@@ -8,12 +8,13 @@ const envelopes = [
 ];
 
 // 預設的隨機紅包內容
-const rewards = [
-    'a02/reward1.png', 'a02/reward2.png', 'a02/reward3.png',
-    'a02/reward4.png', 'a02/reward5.png', 'a02/reward6.png',
-    'a02/reward7.png', 'a02/reward8.png', 'a02/reward9.png',
-    'a02/reward10.png', 'a02/reward11.png'
-];
+function generateImagePaths(folder, prefix, count) {
+    return Array.from({ length: count }, (_, i) => `${folder}/${prefix}${i + 1}.png`);
+}
+
+// 生成紅包圖片
+const rewards = generateImagePaths('a02', 'reward', 14);
+
 
 // 特定暱稱的紅包內容（喵喵固定的圖片）
 const specialRewards = [
