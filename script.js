@@ -13,7 +13,7 @@ function generateImagePaths(folder, prefix, count) {
 }
 
 // 生成紅包圖片
-const rewards = generateImagePaths('a02', 'reward', 23);
+const rewards = generateImagePaths('a02', 'reward', 39);
 
 
 // 特定暱稱的紅包內容（喵喵固定的圖片）
@@ -28,6 +28,13 @@ const specialRewards2 = [
     'a03/tiger1.png', 'a03/tiger2.png', 'a03/tiger3.png',
     'a03/tiger4.png', 'a03/tiger5.png', 'a03/tiger6.png',
     'a03/tiger7.png', 'a03/tiger8.png', 'a03/tiger9.png'
+];
+
+// 特定暱稱的紅包內容（兔兔固定的圖片）
+const specialRewards3 = [
+    'a05/usagi1.png', 'a05/usagi2.png', 'a05/usagi3.png',
+    'a05/usagi4.png', 'a05/usagi5.png', 'a05/usagi6.png',
+    'a05/usagi7.png', 'a05/usagi8.png', 'a05/usagi9.png'
 ];
 
 // 定義紅包的HTML元素
@@ -117,6 +124,10 @@ function setSpecialRewards2() {
     currentRewards = [...specialRewards2]; // 設定為特定的圖片
 }
 
+function setSpecialRewards3() {
+    currentRewards = [...specialRewards3]; // 設定為特定的圖片
+}
+
 // 儲存初始的暱稱
 let initialNickname = '';
 
@@ -146,6 +157,8 @@ startButton.addEventListener('click', () => {
             setSpecialRewards(); // 設置喵喵固定的紅包內容
         } else if (nickname === '今晚打老虎') {
             setSpecialRewards2(); // 設置打老虎固定的紅包內容
+        } else if (nickname === '吟遊') {
+            setSpecialRewards3(); // 設置兔兔固定的紅包內容
         } else {
             shuffleRewards(); // 隨機洗牌紅包內容
         }
@@ -175,6 +188,8 @@ resetButton.addEventListener('click', () => {
         setSpecialRewards(); // 如果最初是喵喵，則使用固定的紅包內容
     } else if (initialNickname === '今晚打老虎') {
         setSpecialRewards2(); // 如果最初是打老虎，則使用固定的紅包內容
+    } else if (initialNickname === '吟遊') {
+        setSpecialRewards3(); // 如果最初是吟遊，則使用固定的紅包內容
     } else {
         shuffleRewards(); // 否則隨機洗牌
     }
