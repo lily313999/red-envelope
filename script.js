@@ -37,6 +37,13 @@ const specialRewards3 = [
     'a05/usagi7.png', 'a05/usagi8.png', 'a05/usagi9.png'
 ];
 
+// 特定暱稱的紅包內容（青蛙固定的圖片）
+const specialRewards4 = [
+    'a06/f1.png', 'a06/f2.png', 'a06/f3.png',
+    'a06/f4.png', 'a06/f5.png', 'a06/f6.png',
+    'a06/f7.png', 'a06/f8.png', 'a06/f9.png'
+];
+
 // 定義紅包的HTML元素
 const gameArea = document.getElementById('gameArea');
 const resetButton = document.getElementById('resetButton');
@@ -128,6 +135,10 @@ function setSpecialRewards3() {
     currentRewards = [...specialRewards3]; // 設定為特定的圖片
 }
 
+function setSpecialRewards4() {
+    currentRewards = [...specialRewards4]; // 設定為特定的圖片
+}
+
 // 儲存初始的暱稱
 let initialNickname = '';
 
@@ -159,6 +170,8 @@ startButton.addEventListener('click', () => {
             setSpecialRewards2(); // 設置打老虎固定的紅包內容
         } else if (nickname === '吟遊') {
             setSpecialRewards3(); // 設置兔兔固定的紅包內容
+        } else if (nickname === '🐸') {
+            setSpecialRewards4(); // 設置青蛙固定的紅包內容
         } else {
             shuffleRewards(); // 隨機洗牌紅包內容
         }
@@ -190,6 +203,8 @@ resetButton.addEventListener('click', () => {
         setSpecialRewards2(); // 如果最初是打老虎，則使用固定的紅包內容
     } else if (initialNickname === '吟遊') {
         setSpecialRewards3(); // 如果最初是吟遊，則使用固定的紅包內容
+    } else if (initialNickname === '🐸') {
+        setSpecialRewards3(); // 如果最初是青蛙，則使用固定的紅包內容
     } else {
         shuffleRewards(); // 否則隨機洗牌
     }
