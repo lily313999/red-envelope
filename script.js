@@ -128,7 +128,15 @@ function setSpecialRewards() {
 }
 
 function setSpecialRewards2() {
-    currentRewards = [...specialRewards2]; // 設定為特定的圖片
+    const otherTigerImages = Array.from({ length: 25 }, (_, i) => `a03/tiger${i + 1}.png`).filter(img => img !== 'a03/tiger5.png');
+    const shuffledImages = otherTigerImages.sort(() => Math.random() - 0.5);
+
+    // 插入固定圖片到陣列的中間
+    currentRewards = [
+        ...shuffledImages.slice(0, 4),
+        'a03/tiger5.png',
+        ...shuffledImages.slice(4)
+    ];
 }
 
 function setSpecialRewards3() {
