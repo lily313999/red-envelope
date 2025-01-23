@@ -13,7 +13,7 @@ function generateImagePaths(folder, prefix, count) {
 }
 
 // 生成紅包圖片
-const rewards = generateImagePaths('a02', 'reward', 48);
+const rewards = generateImagePaths('a02', 'reward', 66);
 
 
 // 特定暱稱的紅包內容（喵喵固定的圖片）
