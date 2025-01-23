@@ -204,7 +204,7 @@ resetButton.addEventListener('click', () => {
     } else if (initialNickname === '吟遊') {
         setSpecialRewards3(); // 如果最初是吟遊，則使用固定的紅包內容
     } else if (initialNickname === '🐸') {
-        setSpecialRewards3(); // 如果最初是青蛙，則使用固定的紅包內容
+        setSpecialRewards4(); // 如果最初是青蛙，則使用固定的紅包內容
     } else {
         shuffleRewards(); // 否則隨機洗牌
     }
